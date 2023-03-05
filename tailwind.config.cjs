@@ -8,7 +8,7 @@ module.exports = {
       primary: "#0d0d0d",
       secondary: "#D3D3D2",
       success: "#75B240",
-      fail: "#DA7225",
+      fail: "#da4025",
       footerBg: "#F7F6F5",
       buttonBg: "#FDFDFD",
     },

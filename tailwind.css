@@ -7,9 +7,43 @@
     @apply w-full xs:max-md:w-3/4 sm:max-lg:w-1/2 lg:w-1/3 xl:w-1/4 mx-auto;
   }
   .label-primarly {
-    @apply flex p-4 items-center border-b-2 border-secondary border-solid text-secondary focus-within:text-primary transition ease-in duration-200;
+    @apply flex p-4 items-center transition ease-in duration-200;
   }
   .input-primarly {
-    @apply flex-grow pl-2 font-light focus:outline-none;
+    @apply flex-grow pl-8 font-light focus:outline-none text-primary placeholder-shown:text-secondary;
   }
+  .border-primarly {
+    @apply absolute bottom-0 left-0 w-full h-px bg-secondary invisible peer-placeholder-shown:visible;
+  }
+  .border-invalid {
+    @apply absolute bottom-0 left-0 w-full h-px bg-fail transition-all duration-1000 transform origin-left scale-x-0 peer-invalid:scale-x-100 peer-placeholder-shown:invisible;
+  }
+  .border-valid {
+    @apply absolute bottom-0 left-0 w-full h-px bg-success transition-all duration-1000 transform origin-left scale-x-0 peer-valid:scale-x-100;
+  }
+}
+
+:root {
+  --fail: #da4025;
+  --success: #75B240;
+}
+
+input[type="password"] + .lock-icon {
+  display: block;
+}
+
+input[type="text"] ~ .unlock-icon {
+  display: block;
+}
+
+.failed-button {
+  background-color: var(--fail);
+  border-color: var(--fail);
+  color: #fff;
+}
+
+.success-button {
+  background-color: var(--success);
+  border-color: var(--success);
+  color: #fff;
 }
