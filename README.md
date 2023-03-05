@@ -11,3 +11,9 @@ npm run build
 ```
 
 Build minify version for production.
+
+```bash
+npm run dev
+```
+
+Run project in development mode.
