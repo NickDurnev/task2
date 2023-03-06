@@ -12,15 +12,12 @@
       <div class="container-primarly pt-14 pb-40 shadow-xl">
         <img src="./logo.svg" alt="Logo" class="w-14 mx-auto mb-14" />
         <h2 id="title" class="mb-3 px-4 text-2xl">Welcome</h2>
-        <form action="" class="w-full relative">
+        <form class="group w-full relative">
           <label class="label-primarly relative">
             <input
               type="email"
               name="email"
-              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               required
-              minlength="8"
-              maxlength="25"
               autocomplete="on"
               placeholder="Email adress"
               class="input-primarly peer"
@@ -28,20 +25,35 @@
             <span
               class="absolute top-4 left-4 text-primary peer-placeholder-shown:text-secondary"
             >
-              <svg class="w-6 h-6">
-                <use href="./public//symbol-defs.svg#icon-user"></use>
+              <svg
+                focusable="false"
+                data-icon="user"
+                role="img"
+                class="w-6 h-6"
+              >
+                <use href="./symbol-defs.svg#icon-user"></use>
               </svg>
             </span>
-            <span class="text-success invisible peer-valid:visible">
+            <span
+              focusable="false"
+              data-icon="check"
+              role="img"
+              class="text-success invisible peer-valid:visible"
+            >
               <svg class="w-6 h-6">
-                <use href="./public//symbol-defs.svg#icon-success"></use>
+                <use href="./symbol-defs.svg#icon-success"></use>
               </svg>
             </span>
             <span
               class="text-fail peer-placeholder-shown:invisible peer-valid:hidden"
             >
-              <svg class="w-6 h-6">
-                <use href="./public//symbol-defs.svg#icon-fail"></use>
+              <svg
+                focusable="false"
+                data-icon="cross"
+                role="img"
+                class="w-6 h-6"
+              >
+                <use href="./symbol-defs.svg#icon-fail"></use>
               </svg>
             </span>
             <div class="border-primarly"></div>
@@ -55,22 +67,34 @@
               required
               placeholder="Password"
               pattern="^(?=.*[!@#$%^&*?])(?=.*\d)(.*)$"
+              oninvalid="setCustomValidity('Password should contain minimum one digit and one special symbol. Has minimum 8 symbols.')"
+              oninput="setCustomValidity('')"
               minlength="8"
               maxlength="20"
               class="input-primarly peer"
             />
             <span
-              class="lock-icon hidden absolute top-4 left-4 text-primary peer-placeholder-shown:text-secondary"
+              class="lock-icon hidden absolute top-4 left-4  peer-placeholder-shown:text-secondary text-primary"
             >
-              <svg class="w-6 h-6">
-                <use href="./public//symbol-defs.svg#icon-lock"></use>
+              <svg
+                focusable="false"
+                data-icon="lock"
+                role="img"
+                class="w-6 h-6"
+              >
+                <use href="./symbol-defs.svg#icon-lock"></use>
               </svg>
             </span>
             <span
               class="unlock-icon hidden absolute top-4 left-4 text-primary peer-placeholder-shown:text-secondary"
             >
-              <svg class="w-6 h-6">
-                <use href="./public//symbol-defs.svg#icon-unlock"></use>
+              <svg
+                focusable="false"
+                data-icon="unlock"
+                role="img"
+                class="w-6 h-6"
+              >
+                <use href="./symbol-defs.svg#icon-unlock"></use>
               </svg>
             </span>
             <button
@@ -79,8 +103,8 @@
               aria-label="Show password"
               class="p-2 absolute top-2 right-2 text-secondary focus-within:text-primary peer-valid:text-primary transition ease-in duration-200"
             >
-              <svg class="w-6 h-6">
-                <use href="./public//symbol-defs.svg#icon-eye"></use>
+              <svg focusable="false" data-icon="eye" role="img" class="w-6 h-6">
+                <use href="./symbol-defs.svg#icon-eye"></use>
               </svg>
             </button>
             <div class="border-primarly"></div>
@@ -90,8 +114,13 @@
           <div class="mt-9 px-4 flex items-center justify-between">
             <span
               class="flex items-center justify-between text-secondary focus-within:text-primary hover:text-primary transition ease-in duration-200"
-              ><svg class="w-6 h-6">
-                <use href="./public//symbol-defs.svg#icon-attention"></use>
+              ><svg
+                focusable="false"
+                data-icon="attention"
+                role="img"
+                class="w-6 h-6"
+              >
+                <use href="./symbol-defs.svg#icon-attention"></use>
               </svg>
               <a href="/" class="pl-2 text-sm font-light text-current"
                 >Forgot Password</a
@@ -101,7 +130,7 @@
               type="submit"
               data-action="submit"
               aria-label="Login"
-              class="py-2 px-7 border-2 rounded-3xl text-secondary transition ease-in duration-200"
+              class="py-2 px-7 border-2 text-secondary bg-transparent rounded-3xl group-valid:border-transparent group-valid:border-0 group-valid:text-buttonBg group-valid:bg-success transition ease-in duration-200"
             >
               Login
             </button>
@@ -115,20 +144,20 @@
           type="button"
           class="flex items-center justify-center p-1 bg-buttonBg text-secondary rounded-full hover:text-primary focus-within:text-primary transition ease-in duration-200"
         >
-          <svg class="w-6 h-6">
-            <use href="./public//symbol-defs.svg#icon-planet"></use>
+          <svg focusable="false" data-icon="planet" role="img" class="w-6 h-6">
+            <use href="./symbol-defs.svg#icon-planet"></use>
           </svg>
         </button>
         <span
-          class="flex text-secondary hover:text-primary focus-within:text-primary transition ease-in duration-200"
+          class="flex text-secondary hover:text-primary focus-within:text-primary cursor-pointer transition ease-in duration-200"
         >
           <a href="/" class="pr-2 text-sm font-light text-current">New user</a>
-          <svg class="w-6 h-6">
-            <use href="./public//symbol-defs.svg#icon-logout"></use>
+          <svg focusable="false" data-icon="logout" role="img" class="w-6 h-6">
+            <use href="./symbol-defs.svg#icon-logout"></use>
           </svg>
         </span>
       </div>
     </footer>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
