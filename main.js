@@ -4,7 +4,7 @@ console.log(hello("World"));
 
 const SUCCESS_BTN_STYLE = "success-button";
 const FAILED_BTN_STYLE = "failed-button";
-const STANDART_BTN_TEXT = "login";
+const STANDART_BTN_TEXT = "Login";
 const FAILED_BTN_TEXT = "Retry";
 
 const refs = {
